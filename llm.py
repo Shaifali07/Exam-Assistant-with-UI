@@ -188,9 +188,9 @@ def generate_paper(SUBJECT,COs,Examination,syllabus,instructions=' '):
 
                 OUTPUT FORMAT - Clean, exam-ready format
                 Clearly labeled Q.1, Q.2, Q.3,Q.4,Q.5, Q.6
-                Marks for each question - CO + Bloom’s level mentioned
-                give images if necessary
-
+                Marks for each question must be integer. It must have CO + Bloom’s level mentioned
+                Avoid: - Float style marks e.g Not allowed 2.000, allowed : 2
+                
                 GOAL Generate a fully structured, strictly CO-compliant, numerical-focused university question paper following ALL rules above. follow {format_instructions} ''')])
     if Examination=="Sessional":
         prompt=prompt_sessional

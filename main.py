@@ -12,14 +12,13 @@ def to_excel(df):
     with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
         df.to_excel(writer, index=False)
     return output.getvalue()
-
-# Create download button
+df = pd.DataFrame()
 
 with st.form("paper_generator"):
    SUBJECT= st.text_input("Enter the Subject Name")
-   COs=st.text_area("Enter Course Outcomes", height=150)
+   COs=st.text_area("Enter Course Outcomes", height=150, help="Copy Paste your Course Outcomes here")
    Examination=st.radio("Select Examination",["Sessional","External"])
-   Syllabus=st.text_area("Enter Subject Syllabus",height=400)
+   Syllabus=st.text_area("Enter Subject Syllabus",height=400, help="Copy Paste your Syllabus here")
    Insturctions=st.text_area("Enter the Instructions (if any)",height=150, help= '''Enter any additional rules or preferences for generating the question paper.
                              Example:
                              1) All questions in Q.1 must be from CO2.
@@ -31,7 +30,8 @@ with st.form("paper_generator"):
             generated_paper=generate_paper(SUBJECT, COs,Examination, Syllabus,Insturctions)
             df = pd.DataFrame(generated_paper)
             st.table(df)
-            st.download_button(
+# Create download button
+st.download_button(
                      label="Download Excel",
                      data=to_excel(df),
                      file_name='data.xlsx',

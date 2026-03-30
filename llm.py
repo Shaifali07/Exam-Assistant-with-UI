@@ -18,7 +18,7 @@ def generate_paper(SUBJECT,COs,Examination,syllabus,instructions=' '):
     class Question_Formation(BaseModel):
         Question: str = Field(description="Question number like Q.1 a, Q.1 b,Q.2 c")
         CO:str=Field(description="course outcome CO like CO1,CO2,CO3")
-        Taxonomy:str=Field(description="Blooms taxonomy A for apply, N for analysis, E for evaluate, R for remember, U for understand")
+        Taxonomy:str=Field(description="Blooms taxonomy A for apply, N for analysis, E for evaluate, R for remember, U for understand C for Create")
         Content:str=Field(description="Question formed")
         Marks:int=Field(description="Marks for question")
     parser=JsonOutputParser(pydantic_object=Question_Formation)
@@ -80,7 +80,7 @@ def generate_paper(SUBJECT,COs,Examination,syllabus,instructions=' '):
             
             
             MANDATORY REQUIREMENTS
-            Each question must include: - Course Outcome (CO) - Bloom’s Level (Apply / Analyze / Evaluate)
+            Each question must include: - Course Outcome (CO) - Bloom’s Level (Apply / Analyze / Evaluate/Create)
             Maintain: - University-level difficulty - Balanced syllabus coverage
             Focus on: - Numericals, application based questions, Problem-solving
             Avoid: - Pure theory-only questions
@@ -180,7 +180,7 @@ def generate_paper(SUBJECT,COs,Examination,syllabus,instructions=' '):
 
                 
                 MANDATORY REQUIREMENTS
-                Each question must include: - Course Outcome (CO) - Bloom’s Level (Apply / Analyze / Evaluate)
+                Each question must include: - Course Outcome (CO) - Bloom’s Level (Apply / Analyze / Evaluate/Create)
                 Maintain: - University-level difficulty - Balanced syllabus coverage
                 Focus on: - Numericals, application based questions, Problem-solving,programming
                 Avoid: - Pure theory-only questions

@@ -4,6 +4,7 @@ import pandas as pd
 import json
 
 st.title("Your Exam Assistant 👩🏻‍💻")
+st.subheader("Generate question papers with CO mapping, Bloom's taxonomy distribution, and attainment-friendly design.")
 
 with st.form("paper_generator"):
    SUBJECT= st.text_input("Enter the Subject Name")

@@ -23,6 +23,7 @@ def generate_paper(SUBJECT,COs,Examination,syllabus,instructions=' '):
         Marks:int=Field(description="integer type Marks for question")
     parser=JsonOutputParser(pydantic_object=Question_Formation)
     format_instructions = parser.get_format_instructions()
+    format_instructions += "\nMarks must be integer only. No decimals allowed."
     prompt_sessional = ChatPromptTemplate.from_messages([
             ("system", "You are an expert academic question paper setter. Generate the questions from the all over syllabus." ),
             ("human",'''Generate a university-level question paper based on the following details:
@@ -84,7 +85,12 @@ def generate_paper(SUBJECT,COs,Examination,syllabus,instructions=' '):
             Maintain: - University-level difficulty - Balanced syllabus coverage
             Focus on: - Numericals, application based questions, Problem-solving
             Avoid: - Pure theory-only questions
-            
+            Marks for each question MUST be STRICTLY INTEGER ONLY.
+            DO NOT use decimal values.
+            DO NOT use float format.
+            Not allowed: 2.000, 5.0, 6.00  
+            Allowed: 2, 5, 6
+            Output marks as integer type only.
             
             OUTPUT FORMAT - Clean, exam-ready format
             Clearly labeled Q.1, Q.2, Q.3

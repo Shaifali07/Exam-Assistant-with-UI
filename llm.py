@@ -20,7 +20,7 @@ def generate_paper(SUBJECT,COs,Examination,syllabus,instructions=' '):
         CO:str=Field(description="course outcome CO like CO1,CO2,CO3")
         Taxonomy:str=Field(description="Blooms taxonomy A for apply, N for analysis, E for evaluate, R for remember, U for understand C for Create")
         Content:str=Field(description="Question formed")
-        Marks:int=Field(description="Marks for question")
+        Marks:int=Field(description="integer type Marks for question")
     parser=JsonOutputParser(pydantic_object=Question_Formation)
     format_instructions = parser.get_format_instructions()
     prompt_sessional = ChatPromptTemplate.from_messages([

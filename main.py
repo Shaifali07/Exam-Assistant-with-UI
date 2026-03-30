@@ -2,9 +2,18 @@ import streamlit as st
 from llm import generate_paper
 import pandas as pd
 import json
+from io import BytesIO
 
 st.title("Your Exam Assistant 👩🏻‍💻")
 st.caption("Generate question papers with CO mapping, Bloom's taxonomy distribution, and attainment-friendly design.")
+@st.cache_data
+def to_excel(df):
+    output = BytesIO()
+    with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
+        df.to_excel(writer, index=False)
+    return output.getvalue()
+
+# Create download button
 
 with st.form("paper_generator"):
    SUBJECT= st.text_input("Enter the Subject Name")
@@ -22,3 +31,9 @@ with st.form("paper_generator"):
             generated_paper=generate_paper(SUBJECT, COs,Examination, Syllabus,Insturctions)
             df = pd.DataFrame(generated_paper)
             st.table(df)
+            st.download_button(
+                     label="Download Excel",
+                     data=to_excel(df),
+                     file_name='data.xlsx',
+                     mime='application/vnd.ms-excel'
+                     )

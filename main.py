@@ -24,7 +24,6 @@ with st.form("paper_generator"):
                              1) All questions in Q.1 must be from CO2.
                              2) Both options in Q.3 must have the same CO(s) Allowed: Option 1 → CO4 + CO5, Option 2 → CO4 + CO5, Not allowed: Option 1 → CO3 + CO5, Option 2 → CO2 + CO4
                              ''')
-
    submitted = st.form_submit_button("Submit")
 
    if submitted:

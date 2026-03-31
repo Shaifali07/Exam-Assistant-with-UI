@@ -92,7 +92,10 @@ def generate_paper(SUBJECT,COs,Examination,syllabus,instructions=' ',status_plac
             Not allowed: 2.000, 5.0, 6.00  
             Allowed: 2, 5, 6
             Output marks as integer type only.
+<<<<<<< HEAD
             Return EXACTLY 13 questions. Do not skip. If any question is missing, the output is INVALID.
+=======
+>>>>>>> 26e80c99b3f7663efa2cd04b235d1a810c12e520
             
             OUTPUT FORMAT - Clean, exam-ready format
             Clearly labeled Q.1, Q.2, Q.3
@@ -206,7 +209,10 @@ Do NOT skip any question
 
                 
                 MANDATORY REQUIREMENTS
+<<<<<<< HEAD
                 Return EXACTLY 24 questions. Do not skip. If any question is missing, the output is INVALID.
+=======
+>>>>>>> 26e80c99b3f7663efa2cd04b235d1a810c12e520
                 Each question must include: - Course Outcome (CO) - Bloom’s Level (Apply / Analyze / Evaluate/Create)
                 Maintain: - University-level difficulty - Balanced syllabus coverage
                 Focus on: - Numericals, application based questions, Problem-solving,programming
@@ -218,7 +224,10 @@ Do NOT skip any question
                 Marks for each question must be integer. It must have CO + Bloom’s level mentioned
                 Avoid: - Float style marks e.g Not allowed 2.000, allowed : 2
                 
+<<<<<<< HEAD
                 
+=======
+>>>>>>> 26e80c99b3f7663efa2cd04b235d1a810c12e520
                 GOAL Generate a fully structured, strictly CO-compliant, numerical-focused university question paper following ALL rules above. follow {format_instructions} ''')])
     if Examination=="Sessional":
         prompt=prompt_sessional

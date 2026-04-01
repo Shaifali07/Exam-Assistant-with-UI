@@ -33,8 +33,9 @@ with st.form("paper_generator"):
             status_placeholder = st.empty()
             with st.spinner("Generating question paper... please wait ⏳"):
                 generated_paper = generate_paper(SUBJECT, COs, Examination, Syllabus, Insturctions, status_placeholder)
-            st.session_state["generated"] = True
+            
             df = pd.DataFrame(generated_paper)
+            st.session_state["generated"] = True
             st.session_state["df"] = df
             st.session_state["SUBJECT"] = SUBJECT
             st.session_state["COs"] = COs
@@ -42,15 +43,6 @@ with st.form("paper_generator"):
 
             # print("result returned")
             # st.table(df)
-if "df" in st.session_state:
-    if st.button("🗑️ Clear All"):
-        keys_to_clear = ["subject", "cos", "exam", "syllabus", "instructions", "df", "generated"]
-
-        for key in keys_to_clear:
-            if key in st.session_state:
-                del st.session_state[key]
-
-        st.rerun()
 # Create download button
 if "df" in st.session_state:
     df = st.session_state["df"]

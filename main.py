@@ -20,12 +20,8 @@ with st.form("paper_generator"):
    COs=st.text_area("Enter Course Outcomes", height=150, help="Copy Paste your Course Outcomes here")
    Examination=st.radio("Select Examination",["Sessional","External"])
    Syllabus=st.text_area("Enter Subject Syllabus",height=400, help="Copy Paste your Syllabus here")
-   Insturctions=st.text_area("Enter the Instructions (if any)",height=150, help= '''Enter any additional rules or preferences for generating the question paper.
-                             \nExample:\n
-                             1) All questions in Q.1 must be from CO2.\n
-                             2) Both options in Q.3 must have the same CO(s)\n
-                             Allowed: Option 1 → CO4 + CO5, Option 2 → CO4 + CO5, 
-                             \n Not allowed: Option 1 → CO3 + CO5, Option 2 → CO2 + CO4
+   Insturctions=st.text_area("Enter the Instructions (if any)",height=150, help= '''Enter any additional rules or preferences for generating the question paper,
+                             \nExample:\n1) All questions in Q.1 must be from CO2.\n 2) Both options in Q.3 must have the same CO(s)\nAllowed: Option 1 → CO4 + CO5, Option 2 → CO4 + CO5, \n Not allowed: Option 1 → CO3 + CO5, Option 2 → CO2 + CO4
     
                              ''')
    button_label = "Generate" if not st.session_state["generated"] else " 🔄 Regenerate"

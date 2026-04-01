@@ -27,7 +27,7 @@ with st.form("paper_generator"):
     
                              ''')
    button_label = "Generate" if not st.session_state["generated"] else " 🔄 Regenerate"
-   submitted = st.form_submit_button("button_label")
+   submitted = st.form_submit_button(button_label)
 
    if submitted:
             status_placeholder = st.empty()

@@ -44,12 +44,14 @@ with st.form("paper_generator"):
             # st.table(df)
 if "df" in st.session_state:
     if st.button("🗑️ Clear All"):
-        keys_to_clear = ["subject", "cos", "exam", "syllabus", "instructions", "df", "generated"]
+        keys_to_clear = ["subject", "cos", "exam", "syllabus", "instructions"]
 
         for key in keys_to_clear:
             if key in st.session_state:
-                del st.session_state[key]
+                st.session_state[key] =""       
 
+        del st.session_state["generated"]        
+        del st.session_state["df"]
         st.rerun()
 # Create download button
 if "df" in st.session_state:

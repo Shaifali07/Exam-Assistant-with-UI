@@ -239,7 +239,7 @@ Do NOT skip any question
     MAX_RETRIES = 5
     for attempt in range(MAX_RETRIES):
         if status_placeholder:
-            status_placeholder.info(f"🔄 {attempt + 1} attempt in progress... Generating question paper")
+            status_placeholder.info(f"🔄 Attempt {attempt + 1} in progress... Generating question paper")
         result = chain.invoke({"SUBJECT": SUBJECT,"COs":COs,"syllabus":syllabus, "format_instructions":format_instructions, "instructions":instructions})
         is_valid, msg = validate_output(result,Examination)
 

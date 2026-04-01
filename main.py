@@ -37,9 +37,9 @@ with st.form("paper_generator"):
             df = pd.DataFrame(generated_paper)
             st.session_state["generated"] = True
             st.session_state["df"] = df
-            st.session_state["subject"] = SUBJECT
-            st.session_state["cos"] = COs
-            st.session_state["syllabus"] = Syllabus
+            st.session_state["SUBJECT"] = SUBJECT
+            st.session_state["COs"] = COs
+            st.session_state["Syllabus"] = Syllabus
 
             # print("result returned")
             # st.table(df)

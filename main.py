@@ -40,7 +40,7 @@ with st.form("paper_generator"):
             st.session_state["SUBJECT"] = SUBJECT
             st.session_state["COs"] = COs
             st.session_state["Syllabus"] = Syllabus
-
+            st.rerun()
             # print("result returned")
             # st.table(df)
 # Create download button

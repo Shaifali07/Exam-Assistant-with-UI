@@ -16,16 +16,16 @@ df = pd.DataFrame()
 if "generated" not in st.session_state:
     st.session_state["generated"] = False
 with st.form("paper_generator"):
-   SUBJECT= st.text_input("Enter the Subject Name",key="subject")
-   COs=st.text_area("Enter Course Outcomes", height=150, help="Copy Paste your Course Outcomes here",key="cos")
-   Examination=st.radio("Select Examination",["Sessional","External"],key="examination")
-   Syllabus=st.text_area("Enter Subject Syllabus",height=400, help="Copy Paste your Syllabus here",key="syllabus")
+   SUBJECT= st.text_input("Enter the Subject Name",key="SUBJECT")
+   COs=st.text_area("Enter Course Outcomes", height=150, help="Copy Paste your Course Outcomes here",key="COs")
+   Examination=st.radio("Select Examination",["Sessional","External"],key="Examination")
+   Syllabus=st.text_area("Enter Subject Syllabus",height=400, help="Copy Paste your Syllabus here",key="Syllabus")
    Insturctions=st.text_area("Enter the Instructions (if any)",height=150, help= '''Enter any additional rules or preferences for generating the question paper.
                              Example:
                              1) All questions in Q.1 must be from CO2.
                              2) Both options in Q.3 must have the same CO(s) Allowed: Option 1 → CO4 + CO5, Option 2 → CO4 + CO5, Not allowed: Option 1 → CO3 + CO5, Option 2 → CO2 + CO4
     
-                             ''',key="instructions")
+                             ''',key="Instructions")
    button_label = "Generate" if not st.session_state["generated"] else " 🔄 Regenerate"
    submitted = st.form_submit_button(button_label)
 
@@ -46,7 +46,7 @@ with st.form("paper_generator"):
 if "df" in st.session_state:
     
     if st.button("🗑️ Clear All"):
-        keys_to_clear = ["subject", "cos", "examination", "syllabus", "insturctions"]
+        keys_to_clear = ["SUBJECT", "COs", "Examination", "Syllabus", "Insturctions"]
 
         for key in keys_to_clear:
             if key in st.session_state:

@@ -13,7 +13,7 @@ def generate_paper(SUBJECT,COs,Examination,syllabus,instructions=' ',status_plac
     groq_api_key = os.environ.get("GROQ_API_KEY")
     llm=ChatGroq(
     model_name="openai/gpt-oss-120b",
-    max_tokens=3000,
+    max_tokens=4000,
     temperature=0)
 
     class Question_Formation(BaseModel):
